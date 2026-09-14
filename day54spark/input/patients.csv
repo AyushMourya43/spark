@@ -1,0 +1,9 @@
+patient_id,patient_name,age,temperature,is_admitted,department
+1001,Rohit,45,98.6,true,Cardiology
+1002,Ananya,32,99.1,false,Neurology
+1003,Varun,67,101.4,true,Cardiology
+1004,Meera,29,98.2,false,Orthopedics
+1005,Karan,54,100.8,true,Neurology
+1006,Isha,41,97.9,false,General
+1007,Arjun,38,99.6,true,Orthopedics
+1008,Diya,26,98.4,false,General

@@ -1,0 +1,42 @@
+[
+  {
+    "patient_id": 1001,
+    "patient_name": "Rohit",
+    "age": 45,
+    "temperature": 98.6,
+    "is_admitted": true,
+    "department": "Cardiology"
+  },
+  {
+    "patient_id": 1002,
+    "patient_name": "Ananya",
+    "age": 32,
+    "temperature": 99.1,
+    "is_admitted": false,
+    "department": "Neurology"
+  },
+  {
+    "patient_id": 1003,
+    "patient_name": "Varun",
+    "age": 67,
+    "temperature": 101.4,
+    "is_admitted": true,
+    "department": "Cardiology"
+  },
+  {
+    "patient_id": 1004,
+    "patient_name": "Meera",
+    "age": 29,
+    "temperature": 98.2,
+    "is_admitted": false,
+    "department": "Orthopedics"
+  },
+  {
+    "patient_id": 1005,
+    "patient_name": "Karan",
+    "age": 54,
+    "temperature": 100.8,
+    "is_admitted": true,
+    "department": "Neurology"
+  }
+]
