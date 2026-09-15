@@ -1,0 +1,21 @@
+order_id,customer_id,customer_name,age,restaurant,city,food_price,quantity,delivery_fee,order_status,customer_rating,is_active,internal_note
+ORD001,C101,Rahul Sharma,25,Food Hub,Delhi,450.50,2,40,Delivered,4.5,true,Normal order
+ORD002,C102,Priya Singh,29,Spice Kitchen,Mumbai,799.00,1,50,Delivered,5.0,true,Regular customer
+ORD003,C103,Amit Kumar,34,Burger Point,delhi,299.50,3,30,Delivered,4.0,true,Discount applied
+ORD004,C104,Neha Verma,28,Pizza Corner, BANGALORE ,599.00,2,45,Preparing,4.2,true,Kitchen delay
+ORD005,C105,Rohan Mehta,-5,Food Hub,Mumbai,450.00,1,40,Delivered,3.5,true,Invalid age
+ORD006,C106,Anjali Gupta,31,Spice Kitchen,Delhi,invalid,2,50,Delivered,4.8,true,Invalid price
+ORD007,C107,Vikas Sharma,42,Burger Point,MUMBAI,350.00,,35,Delivered,4.1,true,Missing quantity
+ORD008,C108,Simran Kaur,27,Pizza Corner,Delhi,650.00,2,,Delivered,4.6,true,Missing delivery fee
+ORD009,C109,Arjun Malhotra,,Food Hub,Delhi,500.00,1,40,Delivered,4.3,true,Missing age
+ORD010,C110,Pooja Jain,24,Spice Kitchen,delhi,850.00,2,50,Cancelled,2.5,false,Cancelled order
+ORD011,C111,Karan Singh,19,Burger Point,Mumbai,250.00,-2,30,Delivered,4.0,true,Invalid quantity
+ORD012,C112,Megha Sharma,36,Pizza Corner,Delhi,-100.00,1,40,Delivered,3.9,true,Invalid food price
+ORD013,C113,Aditya Verma,45,Food Hub, Delhi ,550.00,2,40,Delivered,,true,Missing rating
+ORD014,C114,Riya Kapoor,17,Spice Kitchen,Mumbai,700.00,1,50,Delivered,4.7,true,Underage customer
+ORD015,C115,Nitin Kumar,52,Burger Point,Bangalore,400.00,2,35,Delivered,4.2,true,Normal order
+ORD016,C116,Shreya Gupta,30,Pizza Corner,DELHI,invalid,1,45,Preparing,4.0,true,Invalid price
+ORD017,C117,Manish Yadav,39,Food Hub,Mumbai,600.00,3,40,Delivered,4.5,true,Normal order
+ORD018,C118,Kavita Sharma,26,Spice Kitchen,Delhi,750.00,,50,Delivered,4.8,true,Missing quantity
+ORD019,C119,Saurabh Jain,33,Burger Point, Mumbai ,300.00,2,30,Delivered,4.1,true,City formatting issue
+ORD020,C120,Divya Singh,41,Pizza Corner,Delhi,900.00,1,45,Delivered,6.0,true,Invalid rating
