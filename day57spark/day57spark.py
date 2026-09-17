@@ -10,6 +10,7 @@ os.environ["PYSPARK_PYTHON"] = sys.executable
 os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
 
 from pyspark.sql import SparkSession
+from pyspark.sql.functions import col , sum ,avg
 
 spark = (
     SparkSession.builder 
@@ -300,5 +301,134 @@ result = ed.join(p,ed.employee_id == p.employee_id,"inner").select(
     p.project_name,
     ed.salary
 )
+
+# Q9. DEPARTMENT AND OFFICE INFORMATION
+
+# Join departments with offices using department_id.
+
+# Display:
+
+# department_id
+# department_name
+# office_city
+
+# Use a LEFT JOIN so that every department is included,
+# even if it does not have a corresponding office.
+
+# Question:
+# Which department does not have an office listed?
+# LEGAL
+
+
+d.join(offices, d.department_id == offices.department_id, "left") .select(
+    d.department_id,
+    d.department_name,
+    offices.office_city
+).show()
+
+# ============================================================
+# SECTION B — JOINS + AGGREGATIONS
+# ============================================================
+
+# Use the same Employees, Departments, Projects and Offices
+# DataFrames provided above.
+
+
+# QUESTION 11 — Department-wise Employee Count
+
+# Join the employees and departments DataFrames and calculate
+# the number of employees working in each department.
+
+# Requirements:
+# - Use an INNER JOIN.
+# - Join using department_id.
+# - Display:
+#     department_name
+#     employee_count
+# - Use GROUP BY.
+# - Use COUNT() to calculate the number of employees.
+# - Sort the result by employee_count in descending order.
+
+
+department_employee_count = (
+    e.join(
+        d,
+        e.department_id == d.department_id,
+        "inner"
+    )
+    .groupBy(
+        d.department_name
+    )
+    .count()
+    .withColumnRenamed(
+        "count",
+        "employee_count"
+    )
+    .orderBy(
+        "employee_count",
+        ascending=False
+    )
+)
+
+department_employee_count.show()
+
+# QUESTION 12 — Department-wise Total Salary
+
+# Join the employees and departments DataFrames and calculate
+# the total salary paid by each department.
+
+# Requirements:
+# - Use an INNER JOIN.
+# - Join using department_id.
+# - Display:
+#     department_name
+#     total_salary
+# - Use GROUP BY.
+# - Use SUM() to calculate total salary.
+# - Sort the result by total_salary in descending order.
+
+e.join(
+    d,
+    e.department_id == d.department_id,
+    "inner"
+).groupBy(
+    d.department_name
+).agg(
+    sum("salary").alias("total_salary")
+).orderBy(
+    "total_salary",
+    ascending=False
+
+).show()
+
+# QUESTION 13 — Department-wise Average Salary
+
+# Join the employees and departments DataFrames and calculate
+# the average salary of employees in each department.
+
+# Requirements:
+# - Use an INNER JOIN.
+# - Join using department_id.
+# - Display:
+#     department_name
+#     average_salary
+# - Use GROUP BY.
+# - Use AVG() to calculate average salary.
+# - Sort the result by average_salary in descending order.
+
+e.join(
+    d,
+    e.department_id == d.department_id,
+    "inner"
+).groupBy(
+    d.department_name
+).agg(
+    avg("salary").alias("average_salary")
+).orderBy(
+    "average_salary",
+    ascending=False
+
+).show()
+
 
 input("Press Enter to stop Spark...")
